@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/slides.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .main_bg {
+            background-image: url(../assets/img/background/whyuse.png);
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+            font-family: 'Electrolize', sans-serif;
+        }
+
+        .middle_section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 40px;
+            letter-spacing: 30px;
+            font-weight: 100;
+        }
+
+        #count {
+            font-weight: lighter;
+            word-spacing: 20px;
+        }
+
+        hr {
+            margin: auto;
+            width: 80%;
+            border: 1.5px solid #fff;
+
+        }
+    </style>
+</head>
+
+<body><svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="play" viewBox="0 0 30 30">
+            <path d="M7 30v-30l22 15z" />
+        </symbol>
+    </svg>
+    <div class="main_bg">
+        <div class="middle_section">
+            <h1>COMING SOON</h1>
+            <hr>
+            </hr>
+
+            <div class="timer">
+                <p style="font-size: 30px;" id="count"></p>
+            </div>
+        </div>
+    
+
+    <!-- Panel Bottom #01 -->
+
+    <div style="position: absolute;
+    width: 100%;
+     bottom: 10px; text-align: center;">
+    <a href="" style="color: #fff; text-decoration: none;">WoeldRadio Available google play store</a></div>
+</div>
+    <script>
+        var countDownDate = new Date("Jul 30, 2020 00:00:00").getTime();
+        var countDownFunction = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+            var seconds = Math.floor(distance % (1000 * 60) / (1000));
+
+            document.getElementById("count").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(countDownDate)
+                document.getElementById("count").innerHTML = "TIME OUT";
+            }
+        })  </script>
+</body>
+
+</html>
